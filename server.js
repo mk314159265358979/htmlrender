@@ -33,12 +33,27 @@ app.get('/profile', function(req, res) {
         </html>
     `);
 });
+app.get('/', function(req, res) {
+    res.send(`
+        <!DOCTYPE html>
+<html>
+<body>
+<form action="/htmlrender.onrender.com/add_user" method="GET">
+	First name : <input type="text" name = "first_name"> <br>
+	Last name : <input type="text" name = "last_name"> <br>
+	<input type="submit" value = "Submit">
+	
+</form>
+</body>
+</html>
+    `);
+});
 app.get('/index', function(req, res) {
     res.send(`
         <!DOCTYPE html>
 <html>
 <body>
-<form action="/add_user" method="GET">
+<form action="/htmlrender.onrender.com/add_user" method="GET">
 	First name : <input type="text" name = "first_name"> <br>
 	Last name : <input type="text" name = "last_name"> <br>
 	<input type="submit" value = "Submit">
