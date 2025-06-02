@@ -38,7 +38,7 @@ app.get('/index', function(req, res) {
         <!DOCTYPE html>
 <html>
 <body>
-<form action="http://add_user" method="GET">
+<form action="/add_user" method="GET">
 	First name : <input type="text" name = "first_name"> <br>
 	Last name : <input type="text" name = "last_name"> <br>
 	<input type="submit" value = "Submit">
