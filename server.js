@@ -28,9 +28,24 @@ app.get('/profile', function(req, res) {
         <html>
             <head><title>Profil</title></head>
             <body>
-                <h1>imie nazwisko</h1>
+                <h1>Marek Koprowski</h1>
             </body>
         </html>
+    `);
+});
+app.get('/index', function(req, res) {
+    res.send(`
+        <!DOCTYPE html>
+<html>
+<body>
+<form action="http://add_user" method="GET">
+	First name : <input type="text" name = "first_name"> <br>
+	Last name : <input type="text" name = "last_name"> <br>
+	<input type="submit" value = "Submit">
+	
+</form>
+</body>
+</html>
     `);
 });
  const PORT = process.env.PORT || 8080;
