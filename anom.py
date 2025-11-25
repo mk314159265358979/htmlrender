@@ -17,3 +17,5 @@ def anonimizacja(text, r=regexy, n=nazwy):
         text = re.sub(wzorzec, lambda m: zamien(m.group(0)), text)   
     return text
 
+print("ALA ma kota")
+
