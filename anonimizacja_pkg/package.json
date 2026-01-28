@@ -1,0 +1,51 @@
+{
+  "name": "anonimizacja",
+  "displayName": "Anonimizacja tekstu",
+  "description": "Anonimizacja pliku lub zaznaczenia",
+  "version": "1.1.0",
+  "main": "./extension.js",
+  "icon": "icon.png",
+  "engines": { "vscode": "*" },
+  "activationEvents": [
+    "onCommand:anonimizacja.runFile",
+    "onCommand:anonimizacja.runSelection"
+  ],
+  "contributes": {
+  "commands": [
+    {
+      "command": "anonimizacja.runFile",
+      "title": "Anonimizuj plik"
+    },
+    {
+      "command": "anonimizacja.runSelection",
+      "title": "Anonimizuj zaznaczenie"
+    }
+  ],
+  "submenus": [
+    {
+      "id": "anonimizacja.submenu",
+      "label": "Anonimizuj"
+    }
+  ],
+  "menus": {
+    "editor/context": [
+      {
+        "submenu": "anonimizacja.submenu",
+        "when": "editorTextFocus",
+        "group": "9_cutcopypaste"
+      }
+    ],
+    "anonimizacja.submenu": [
+      {
+        "command": "anonimizacja.runFile",
+        "group": "1_actions"
+      },
+      {
+        "command": "anonimizacja.runSelection",
+        "group": "1_actions",
+        "when": "editorHasSelection"
+      }
+    ]
+  }
+}
+}
